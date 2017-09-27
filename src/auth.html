@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+
+        <link href="/bootstrap.min.css" rel="stylesheet">
+        <link href="/font-awesome.min.css" rel="stylesheet">
+        
+        <script src="/jquery-3.2.1.min.js"></script>
+        <script src="/bootstrap.min.js"></script>
+        <script src="/jquery.mobile-events.min.js"></script>
+        <script src="/client.min.js"></script>
+        
+        <link href="/auth.css" rel="stylesheet">
+
+        <script src="/auth.js"></script>
+            
+        <title>Pi Car</title>
+
+    </head>
+    <body>
+        <div class="page-alerts">
+            <div class="alert alert-danger page-alert" id="alert">
+                <div style="text-align: center;"><strong>Unauthorized</strong></div>
+            </div>
+        </div>
+      
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8 col-centered">
+                    <form method="post" action="/picar" ajax="true">                  
+                        <input type="text" autocorrect="off" autocapitalize="none" id="driver" name="driver" class="form-control" placeholder="Driver" required="" autofocus="" autocomplete="off">
+                        <input type="password" id="key" name="key" class="form-control" placeholder="Password" required="" autocomplete="off">
+                        <input class="btn btn-lg btn-primary btn-block" type="submit">Start</button>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /container -->
+    </body>
+</html>

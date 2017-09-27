@@ -1,0 +1,81 @@
+html, body {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+ }
+
+.center {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    
+    display: flex;
+    align-items: center;
+}
+
+.btn-circle-lg {
+    width: 92px;
+    height: 92px;
+    text-align: center;
+    padding: 13px 0;
+    font-size: 30px;
+    line-height: 2.00;
+    border-radius: 70px;
+    opacity: .5;
+    background-color: rgb(169, 169, 169);
+}
+
+.side {
+    position: fixed;
+    top: 0;
+    width: 184px;
+    z-index: 20;
+    padding: 0;
+}
+
+.left-side {
+    left: 8px;
+}
+
+.right-side {
+    right: 8px;
+}
+
+.inner {
+    position: absolute;
+    padding-top: 64px;
+}
+
+.outter {
+    position: absolute;
+    padding-bottom: 92px;
+}
+
+.left-side .inner {
+    right: 32px;
+}
+
+.left-side .outter{
+    left: 0;
+}
+
+.right-side .inner{
+    left: 32px;
+}
+
+.right-side .outter{
+    right: 0;
+}
+
+.menu {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+}
