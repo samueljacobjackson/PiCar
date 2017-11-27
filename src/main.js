@@ -2,6 +2,22 @@ $(document).ready(function(){
 
     $('#video').attr('src', 'http://' + window.location.hostname + ':8081/?action=stream');
 
+    var reOrientate = function(){
+        if(screen.orientation.angle == 0){
+            $('#center').attr('class', 'center-vertical');
+            $('.side').css('min-height', '120vh');
+        } else {
+            $('#center').attr('class', 'center-horizontal');
+            $('.side').css('min-height', '100vh');
+        }
+    }
+
+    window.addEventListener("orientationchange", function(event) {
+        reOrientate();
+    }, false);
+
+    reOrientate();
+    
     var license = (new ClientJS()).getFingerprint();
     var movement = {Forward: 0, Reverse: 0, Left: 0, Right: 0, License: license};    
 
