@@ -6,9 +6,14 @@ $(document).ready(function(){
         if(screen.orientation.angle == 0){
             $('#center').attr('class', 'center-vertical');
             $('.side').css('min-height', '120vh');
+            setTimeout(function(){
+                var imgHeight = $('img#video').css('height');
+                $('#stat').css('top', imgHeight);
+            }, 500);
         } else {
             $('#center').attr('class', 'center-horizontal');
             $('.side').css('min-height', '100vh');
+            $('#stat').css('top', '0px');
         }
     }
 
@@ -26,6 +31,11 @@ $(document).ready(function(){
     }
 
     $('#refresh').on('click', function(){
+        window.location = 'http://' + window.location.host + '/picar';
+    });
+
+    $('#sign-out').on('click', function(){
+        $.cookie("carkey", null, {path : '/'});
         window.location = 'http://' + window.location.host + '/picar';
     });
 
@@ -132,4 +142,13 @@ $(document).ready(function(){
         // in case of lost connection tries to reconnect every 3 secs
         setTimeout(wsConnect,3000);
     }
+
+    $('.menu-btn').on('click', function() {
+        if($('.menu').css('width') === '0px'){
+            $('.menu').css('width', '200px');
+        }
+        else {
+            $('.menu').css('width', '0px');
+        }
+    });
 });

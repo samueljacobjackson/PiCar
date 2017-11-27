@@ -29,10 +29,26 @@
     </head>
     <body>
         <div>
-            <div style="position: fixed; top: 0; left: 20px;" id="stat"></div>
-            <div class="menu">
-                <button type="button" id="refresh" class="btn btn-outline-primary"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            <div style="position: fixed; left: 20px;" id="stat"></div>
+            <!--
+            <div class="dropdown">
+                <button class="btn btn-primary btn-menu dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-ellipsis-h"></i></button>
+                <ul class="dropdown-menu menu">
+                    <li id="refresh" ><i class="fa fa-refresh" aria-hidden="true"></i>Refresh</li>
+                </ul>
            </div>
+            -->
+            <div class="menu">
+                <ul>
+                    <li><button id="refresh" type="button" class="btn btn-default"><i class="fa fa-refresh"></i> Reload</button></li>
+                    <li><button id="signout" type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Sign Out</button></li>
+                </ul>
+            </div>
+
+            <div class="menu-btn">
+                <button type="button" class="btn btn-default"><i class="fa fa-bars"></i></button>
+            </div>
+
             <div class="view">
                 <div class="side left-side">
                     <div class="outter">
