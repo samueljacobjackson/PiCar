@@ -58,20 +58,20 @@ img{
 
 .inner {
     position: absolute;
-    padding-top: 64px;
 }
 
 .outter {
     position: absolute;
-    padding-bottom: 92px;
 }
 
 .left-side .inner {
     right: 32px;
+    z-index: 2;
 }
 
 .left-side .outter{
     left: 0;
+    z-index: 1;
 }
 
 .right-side .inner{

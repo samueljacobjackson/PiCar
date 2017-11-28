@@ -6,6 +6,8 @@ $(document).ready(function(){
         if(screen.orientation.angle == 0){
             $('#center').attr('class', 'center-vertical');
             $('.side').css('min-height', '120vh');
+            $('.inner').css('top', '52%');
+            $('.outter').css('top', '40%');
             setTimeout(function(){
                 var imgHeight = $('img#video').css('height');
                 $('#stat').css('top', imgHeight);
@@ -14,6 +16,8 @@ $(document).ready(function(){
             $('#center').attr('class', 'center-horizontal');
             $('.side').css('min-height', '100vh');
             $('#stat').css('top', '0px');
+            $('.inner').css('top', '40%');
+            $('.outter').css('top', '15%');
         }
     }
 
