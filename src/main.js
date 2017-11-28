@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $('#video').attr('src', 'http://' + window.location.hostname + ':8081/?action=stream');
+    $('#video').attr('src', window.location.protocol + '//' + window.location.hostname + '/vid');
 
     var reOrientate = function(){
         if(screen.orientation.angle == 0){
@@ -31,12 +31,12 @@ $(document).ready(function(){
     }
 
     $('#refresh').on('click', function(){
-        window.location = 'http://' + window.location.host + '/picar';
+        window.location = window.location.protocol + '//' + window.location.host + '/picar';
     });
 
     $('#sign-out').on('click', function(){
         $.cookie("carkey", null, {path : '/'});
-        window.location = 'http://' + window.location.host + '/picar';
+        window.location = window.location.protocol + '//' + window.location.host + '/picar';
     });
 
     //FWD
@@ -117,9 +117,8 @@ $(document).ready(function(){
     
     var ws;
     var wsUri = "ws:";
-    var loc = window.location;
-    if (loc.protocol === "https:") { wsUri = "wss:"; }
-    wsUri += "//" + loc.host + loc.pathname.replace("picar","ws/picar");
+    if (window.location.protocol === "https:") { wsUri = "wss:"; }
+    wsUri += "//" + window.location.host + window.location.pathname.replace("picar","ws/picar");
 
     ws = new WebSocket(wsUri);
     
