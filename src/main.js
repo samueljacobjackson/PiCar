@@ -35,12 +35,12 @@ $(document).ready(function(){
     }
 
     $('#refresh').on('click', function(){
-        window.location = window.location.protocol + '//' + window.location.host + '/picar';
+        window.location = window.location.protocol + '//' + window.location.host;
     });
 
     $('#sign-out').on('click', function(){
         $.cookie("carkey", null, {path : '/'});
-        window.location = window.location.protocol + '//' + window.location.host + '/picar';
+        window.location = window.location.protocol + '//' + window.location.host;
     });
 
     //FWD
@@ -122,14 +122,14 @@ $(document).ready(function(){
     var ws;
     var wsUri = "ws:";
     if (window.location.protocol === "https:") { wsUri = "wss:"; }
-    wsUri += "//" + window.location.host + window.location.pathname.replace("picar","ws/picar");
+    wsUri += "//" + window.location.host + window.location.pathname + "ws/picar";
 
     ws = new WebSocket(wsUri);
     
     ws.onmessage = function(msg) {
         $('#stat').html(msg.data);
         if(msg.data === 'Connection Timeout'){
-            window.location = 'http://' + window.location.host + '/picar';
+            window.location = 'http://' + window.location.host;
         }
     }
 
