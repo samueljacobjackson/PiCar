@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $('#video').attr('src', window.location.protocol + '//' + window.location.hostname + '/vid');
+    $('#video').attr('src', 'https://' + window.location.hostname + '/vid');
 
     var reOrientate = function(){
         if(screen.orientation.angle == 0){
@@ -39,7 +39,7 @@ $(document).ready(function(){
     });
 
     $('#sign-out').on('click', function(){
-        $.cookie("carkey", null, {path : '/'});
+        $.removeCookie('carkey', {path : '/'});
         window.location = window.location.protocol + '//' + window.location.host;
     });
 
@@ -122,7 +122,7 @@ $(document).ready(function(){
     var ws;
     var wsUri = "ws:";
     if (window.location.protocol === "https:") { wsUri = "wss:"; }
-    wsUri += "//" + window.location.host + window.location.pathname + "ws/picar";
+    wsUri += "//" + window.location.host + window.location.pathname.replace('picar', '') + "ws/picar";
 
     ws = new WebSocket(wsUri);
     
