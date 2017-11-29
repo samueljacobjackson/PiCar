@@ -31,7 +31,7 @@ $(document).ready(function(){
                     alert.slideDown();
                 }
                 else if (result === 'succeeded') {
-                    window.location = 'http://' + window.location.host + '/picar';
+                    window.location = 'https://' + window.location.host;
                 }
             }
         });    
