@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
-    $('#video').attr('src', 'https://' + window.location.hostname + '/vid');
+    $("#video").on("error", function(){
+        $(this).attr('src', '/video-placeholder.png');
+    });
+
+    $('#video').attr('src', window.location.protocol + '//' + window.location.hostname + '/vid');
 
     var reOrientate = function(){
         if(screen.orientation.angle == 0){
