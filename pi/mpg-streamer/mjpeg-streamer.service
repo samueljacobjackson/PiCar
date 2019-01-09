@@ -1,0 +1,13 @@
+[Unit]
+Description=Mjpg-Streamer Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/usr/local/bin/
+ExecStart=/usr/local/bin/mjpg_streamer -i "/usr/local/lib/input_uvc.so -y -r 320x240 -fps 15 -q 50" -o "/usr/local/lib/output_http.so -w /usr/local/www"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
